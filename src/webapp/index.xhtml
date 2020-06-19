@@ -35,5 +35,19 @@
         </h:panelGrid>
 
     </h:form>
+    <h:dataTable value="#{user.listUser}" var="item">
+        <h:column>
+            <f:facet name="header"></f:facet>
+            #{item.userName}
+        </h:column>
+        <h:column>
+            <f:facet name="header"></f:facet>
+            #{item.password}
+        </h:column>
+        <h:column>
+            <f:facet name="header"></f:facet>
+            #{item.gender}
+        </h:column>
+    </h:dataTable>
 </h:body>
 </html>
