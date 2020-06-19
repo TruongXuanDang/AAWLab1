@@ -7,15 +7,33 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:body>
     <h:form>
-        <h:inputText value="#{user.userName}" label="User name"/><br/>
-        <h:inputSecret value="#{user.password}" label="Password"/><br/>
-        <h:commandButton value="LOGIN" action="#{user.goProduct}" /><br/>
+        <h:messages for="username" style="color: red"/><br/>
+        <h:messages for="password" style="color: red"/>
+        <h:messages style="color: red"/>
 
-        <h:selectOneMenu value="#{user.gender}">
-            <f:selectItem itemValue="Male" itemLabel="Male label"/>
-            <f:selectItem itemValue="Female" itemLabel="Female label"/>
-            <f:selectItem itemValue="Female" itemLabel="Female label"/>
-        </h:selectOneMenu>
+        <h:panelGrid columns="2">
+            <h:outputLabel value="Username"/>
+            <h:inputText id="username" value="#{user.userName}" label="User name" required="true" validatorMessage="Toi thieu 3 ki tu, toi da 20"
+                         requiredMessage="Chua nhap username">
+                <f:validateLength minimum="3" maximum="20"/>
+            </h:inputText>
+
+            <h:outputLabel value="Password"/>
+            <h:inputSecret id="password" value="#{user.password}" label="Password" required="true" >
+                <f:validator validatorId="CustomValidator"/>
+            </h:inputSecret>
+
+
+            <h:outputLabel value="Gender"/>
+            <h:selectOneMenu value="#{user.gender}">
+                <f:selectItem itemValue="Male" itemLabel="Male label"/>
+                <f:selectItem itemValue="Female" itemLabel="Female label"/>
+                <f:selectItem itemValue="Female" itemLabel="Female label"/>
+            </h:selectOneMenu>
+
+            <h:commandButton value="LOGIN" action="#{user.goProduct}" />
+        </h:panelGrid>
+
     </h:form>
 </h:body>
 </html>
