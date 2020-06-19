@@ -17,4 +17,12 @@
     </h:form>
 
 </f:view>
+<h:body>
+    <ui:composition template="template/template.xhtml">
+        <ui:define name="content">
+            <h:outputLabel value="Hello, #{user.userName}" /><br/>
+            <h:commandButton onclick="showAlert()" value="Ok"/>
+        </ui:define>
+    </ui:composition>
+</h:body>
 </html>
