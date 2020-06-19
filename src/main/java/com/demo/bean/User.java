@@ -8,6 +8,7 @@ import java.util.List;
 
 @ManagedBean
 @SessionScoped
+
 public class User implements Serializable {
     private String userName;
     private String password;

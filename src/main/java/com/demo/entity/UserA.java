@@ -2,12 +2,13 @@ package com.demo.entity;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import javax.faces.bean.ManagedBean;
 import javax.persistence.*;
 
 @Entity
 @Table(name = "user")
-
-public class User {
+@ManagedBean(name = "userA", eager = true)
+public class UserA {
 
     @Id
     @GeneratedValue(generator = "increment")
