@@ -5,7 +5,17 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-<f:view>
-    <h:outputLabel value="Hello, world"/>
-</f:view>
+<h:body>
+    <h:form>
+        <h:inputText value="#{user.userName}" label="User name"/><br/>
+        <h:inputSecret value="#{user.password}" label="Password"/><br/>
+        <h:commandButton value="LOGIN" action="#{user.goProduct}" /><br/>
+
+        <h:selectOneMenu value="#{user.gender}">
+            <f:selectItem itemValue="Male" itemLabel="Male label"/>
+            <f:selectItem itemValue="Female" itemLabel="Female label"/>
+            <f:selectItem itemValue="Female" itemLabel="Female label"/>
+        </h:selectOneMenu>
+    </h:form>
+</h:body>
 </html>
